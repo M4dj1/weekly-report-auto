@@ -65,10 +65,8 @@ class Chart
 
         let nested = nest()
             .key(function(d) {
-                return d.type
-            })
-            
-            .entries(data)
+                return Object.values(d)[0];
+            }).entries(data)
 
         nested.forEach(item =>{
             let init = {}
@@ -241,7 +239,7 @@ export class ClusteredBarChart extends Chart
         }
 
         chart.data = adaptedData;
-
+        console.log("from adapteddata", adaptedData)
         params.series.forEach(serie => {
             createSeries(serie, serie);
         });

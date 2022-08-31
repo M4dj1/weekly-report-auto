@@ -43,6 +43,7 @@ export const WeeklyPage = () => {
         .then(res=> {
           let data = res.result;
           setWeeklyData(data || {});
+          console.log("dataaaaaaaaa",data);
           console.log(data);
         });
       }
